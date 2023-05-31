@@ -67,5 +67,49 @@
 </div>
 
 
+<hr>
+<div>
+    <h3>Create a New Account</h3>
+    <div>
+        <label for="newName">Name:</label>
+        <input type="text" id="newName" minlength="1" maxlength="12" required>
+    </div>
+    <div>
+        <label for="newTitle">Title:</label>
+        <input type="text" id="newTitle" minlength="1" maxlength="30" required>
+    </div>
+
+    <div>
+        <label for="newRace">Race:</label>
+        <select id="newRace" required>
+            <!-- Options will be populated dynamically -->
+        </select>
+    </div>
+    <div>
+        <label for="newProfession">Profession:</label>
+        <select id="newProfession" required>
+            <!-- Options will be populated dynamically -->
+        </select>
+    </div>
+
+
+    <div>
+        <label for="newLevel">Level:</label>
+        <input type="number" id="newLevel" min="0" max="100" required>
+    </div>
+    <div>
+        <label for="newBirthday">Birthday:</label>
+        <input type="date" id="newBirthday" required>
+    </div>
+    <div>
+        <label for="newBanned">Banned:</label>
+        <input type="checkbox" id="newBanned">
+    </div>
+    <div>
+        <button id="createAccountButton">Create Account</button>
+    </div>
+</div>
+
+
 </body>
 </html>

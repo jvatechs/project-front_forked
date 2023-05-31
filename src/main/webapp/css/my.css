@@ -76,18 +76,34 @@ table, th, td, tr {
     background-color: dodgerblue;
     color: white;
 }
+
 .editButton {
-  background-image: url(../img/edit.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 3rem; 
-  height: 3rem; 
+    background-image: url(../img/edit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3rem;
+    height: 3rem;
 }
 
 .deleteButton {
-  background-image: url(../img/delete.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 3rem; 
-  height: 3rem; 
+    background-image: url(../img/delete.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3rem;
+    height: 3rem;
+}
+
+.fa-save {
+    background-image: url(../img/save.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3rem;
+    height: 3rem;
+}
+
+.edit-field {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
