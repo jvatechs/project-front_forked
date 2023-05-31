@@ -35,6 +35,16 @@ $(document).ready(function () {
         // Add the active class to the clicked button
         $(this).addClass("active");
     });
+
+  // Edit button event handler
+
+  $("#mainTable").on("click", ".editButton", function () {
+    var row = $(this).closest("tr");
+    var id = row.find("td:first").text(); // Assuming the ID is in the first column
+    // Handle the edit action for the corresponding record
+    console.log("Edit button clicked for ID: " + id);
+  });
+
 });
 
 var tableId = "#mainTable";
@@ -65,6 +75,24 @@ function populateTable(data, pageSize, page) {
         $("<td>").text(player.level).appendTo(row);
         $("<td>").text(player.birthday).appendTo(row);
         $("<td>").text(player.banned).appendTo(row);
+
+
+            // Edit icon column
+    var editIcon = $("<i>").addClass("fas fa-edit");
+    var editButton = $("<button>").addClass("editButton").append(editIcon);
+    $("<td>").append(editButton).appendTo(row);
+
+// Delete icon column
+var deleteIcon = $("<i>").addClass("fas fa-trash-alt");
+var deleteButton = $("<button>")
+  .addClass("deleteButton")
+  .append(deleteIcon)
+  .on("click", function () {
+    var row = $(this).closest("tr");
+    var id = row.find("td:first").text(); // Assuming the ID is in the first column
+    deleteAccount(id);
+  });
+$("<td>").append(deleteButton).appendTo(row);
 
         console.log("Added account")
     });
@@ -129,4 +157,21 @@ function getTotalAccountCount() {
             console.log("Request failed: " + error);
         }
     });
+}
+
+function deleteAccount(id) {
+  var url = "/rest/players/" + id;
+
+  $.ajax({
+    type: "DELETE",
+    url: url,
+    success: function () {
+      console.log("Account deleted successfully.");
+      // After successful deletion, refresh the account list on the current page
+      fetchData(currentPage);
+    },
+    error: function (xhr, status, error) {
+      console.log("Failed to delete account: " + error);
+    }
+  });
 }
