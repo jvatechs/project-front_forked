@@ -1,41 +1,78 @@
-*{
-  margin: 1;
-  padding: 1;
+* {
+    margin: 1px;
+    padding: 1px;
 }
 
 table, th, td, tr {
-  border: 1px solid black;
+    border: 1px solid black;
 }
+
 #selector {
-  font-size: 0.9rem;
-  padding: 1px 1px;
-  width: 2.5rem;
-  height: 1.5rem;
+    font-size: 0.9rem;
+    padding: 1px 1px;
+    width: 2.5rem;
+    height: 1.5rem;
 
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 5px;
-  border: 1px solid #dfdfdf;
-  border-radius: 2px;
-  margin-right: 2rem;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    margin-right: 2rem;
 
 }
+
 #selectDiv {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
-#pagesLabel {
-  display: inline-block;
-}
-#pagesButtons {
-  display: inline-block;
-}
-.btn {
-  padding: 3px 5px;
-  border: 1px solid #000;
-  background-color: #ffffff;
-  color: black;
-}
-.active{
-background-color: blue; !important;
 
+#pagesLabel {
+    display: inline-block;
+}
+
+#pagesButtons {
+    display: inline-block;
+}
+
+.btn {
+    padding: 3px 5px;
+    border: 1px solid #000;
+    background-color: #ffffff;
+    color: black;
+    margin: 1px;
+}
+
+/*.btn:hover{
+  background: dimgray; !important;
+  outline: none;
+  box-shadow: none!important;
+}
+
+.active{
+  background-color: blue !important;
+  border-style: inset !important;
+}*/
+
+/*.pageButton:hover,
+.pageButton.active {
+  background-color: dimgray !important;
+  outline: none !important;
+  box-shadow: none !important;
+}*/
+.pageButton {
+    display: inline-block;
+    border: none;
+    outline: none;
+    padding: 2px 8px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 12px;
+    border: 1px solid black;
+    margin: 1px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .pageButton:hover {
+    background-color: dodgerblue;
+    color: white;
 }
